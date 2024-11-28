@@ -38,15 +38,36 @@ if (menuBtn && sidebar) {
 }
 
 // Alternar visibilidade do formulário de busca
-if (searchBtn && searchForm) {
-  searchBtn.addEventListener('click', () => {
-    const isVisible = searchForm.classList.contains('visible');
-    searchForm.style.transform = isVisible ? 'scaleY(0)' : 'scaleY(1)';
-    searchForm.style.opacity = isVisible ? '0' : '1';
-    searchForm.style.visibility = isVisible ? 'hidden' : 'visible';
-    searchForm.classList.toggle('visible');
+if (menuBtn && sidebar) {
+  menuBtn.addEventListener('click', () => {
+      // Em telas pequenas, feche a pesquisa antes de abrir o menu
+      if (window.innerWidth <= 991) {
+          if (searchForm.classList.contains('visible')) {
+              searchForm.classList.remove('visible');
+              searchForm.style.transform = 'scaleY(0)';
+              searchForm.style.opacity = '0';
+              searchForm.style.visibility = 'hidden';
+          }
+      }
+      sidebar.classList.toggle('active');
   });
 }
+
+if (searchBtn && searchForm) {
+  searchBtn.addEventListener('click', () => {
+      if (window.innerWidth <= 991) {
+          if (sidebar.classList.contains('active')) {
+              sidebar.classList.remove('active');
+          }
+      }
+      const isVisible = searchForm.classList.contains('visible');
+      searchForm.style.transform = isVisible ? 'scaleY(0)' : 'scaleY(1)';
+      searchForm.style.opacity = isVisible ? '0' : '1';
+      searchForm.style.visibility = isVisible ? 'hidden' : 'visible';
+      searchForm.classList.toggle('visible');
+  });
+}
+
 
 // Configuração do slideshow
 let slideIndex = 1; // Inicia no primeiro slide
