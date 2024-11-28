@@ -255,32 +255,10 @@ footer .divp p {
         padding: 1rem 1.5rem; /* Ajustado para reduzir o espaçamento */
     }
 
-    .header-icons-left {
-        display: flex;
-        flex-direction: column; /* Empilha os elementos verticalmente */
-        align-items: flex-start; /* Alinha à esquerda */
-        gap: 10px; /* Espaço entre o menu e a pesquisa */
+    #menu-btn {
+        display: inline-block;
     }
 
-    .pesquisa {
-        width: 100%; /* Garante que a barra de pesquisa não extrapola o contêiner */
-        max-width: 300px; /* Define uma largura máxima */
-        position: relative; /* Permite personalizar o posicionamento */
-    }
-
-    .htextinput {
-        width: 100%; /* Adapta a largura da barra de pesquisa */
-        max-width: 300px; /* Para evitar que fique muito grande */
-    }
-
-    .header .fas.fa-bars {
-        font-size: 24px; /* Ajusta o tamanho do ícone do menu */
-    }
-
-    #menu {
-        margin-bottom: 10px; /* Cria um espaço entre o menu e a barra de pesquisa */
-    }
-    
     .header .htextinput {
         position: fixed;
         top: 0;
