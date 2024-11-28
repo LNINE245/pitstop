@@ -37,22 +37,6 @@ if (menuBtn && sidebar) {
   });
 }
 
-// Alternar visibilidade do formulário de busca
-if (menuBtn && sidebar) {
-  menuBtn.addEventListener('click', () => {
-      // Em telas pequenas, feche a pesquisa antes de abrir o menu
-      if (window.innerWidth <= 991) {
-          if (searchForm.classList.contains('visible')) {
-              searchForm.classList.remove('visible');
-              searchForm.style.transform = 'scaleY(0)';
-              searchForm.style.opacity = '0';
-              searchForm.style.visibility = 'hidden';
-          }
-      }
-      sidebar.classList.toggle('active');
-  });
-}
-
 if (searchBtn && searchForm) {
   searchBtn.addEventListener('click', () => {
       if (window.innerWidth <= 991) {
